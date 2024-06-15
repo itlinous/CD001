@@ -22,7 +22,7 @@ function getTextForNum(e) {
 function getSpeedTime() {
     listMain.forEach(((e, t) => {
         tim[t] = (new Date()).getTime();
-        const n = "--<img src=" + e.url + ' width="1" height="1" onerror="getDiffEndTime(' + t + ')">';
+        const n = "--<img src=" + e.urlDefault + ' width="1" height="1" onerror="getDiffEndTime(' + t + ')">';
         $($("#lineCtrl").find(".val")[t]).html(n);
     }));
 }
@@ -103,7 +103,8 @@ var jsonData = {
                         "sort": 1,
                         "position": 2,
                         "type": 1,
-                        "platformId": 31
+                        "platformId": 31,
+                        "urlDefault": "https://google.com"
                     },
                     {
                         "id": 76,
@@ -113,7 +114,8 @@ var jsonData = {
                         "sort": 2,
                         "position": 2,
                         "type": 1,
-                        "platformId": 31
+                        "platformId": 31,
+                        "urlDefault": "https://google.com.vn"
                     },
                     {
                         "id": 77,
@@ -123,7 +125,8 @@ var jsonData = {
                         "sort": 3,
                         "position": 2,
                         "type": 1,
-                        "platformId": 31
+                        "platformId": 31,
+                        "urlDefault": "https://google.com.vn"
                     },
                     {
                         "id": 131,
@@ -133,7 +136,8 @@ var jsonData = {
                         "sort": 4,
                         "position": 2,
                         "type": 1,
-                        "platformId": 31
+                        "platformId": 31,
+                        "urlDefault": "https://google.com.vn"
                     },
                     {
                         "id": 132,
@@ -143,7 +147,8 @@ var jsonData = {
                         "sort": 5,
                         "position": 2,
                         "type": 1,
-                        "platformId": 31
+                        "platformId": 31,
+                        "urlDefault": "https://google.com.vn"
                     }
                 ]
             }
@@ -165,13 +170,13 @@ var jsonData = {
 
 
 function randomizeUrls(data, linkList) {
-    // var mainPositionList = data.t.mainPositionList[0].mainPositionList;
+    var mainPositionList = data.t.mainPositionList[0].mainPositionList;
 
-    // for (var i = 0; i < mainPositionList.length; i++) {
-    //     var randomIndex = Math.floor(Math.random() * linkList.length);
-    //     mainPositionList[i].url = linkList[randomIndex];
-    //     linkList.splice(randomIndex, 1); // Loại bỏ URL đã sử dụng để tránh trùng lặp
-    // }
+    for (var i = 0; i < mainPositionList.length; i++) {
+        var randomIndex = Math.floor(Math.random() * linkList.length);
+        mainPositionList[i].url = linkList[randomIndex];
+        linkList.splice(randomIndex, 1); // Loại bỏ URL đã sử dụng để tránh trùng lặp
+    }
 }
 randomizeUrls(jsonData, jsonLink);
 
