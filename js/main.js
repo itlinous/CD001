@@ -80,16 +80,11 @@ function addFavorite() {
 
 var headArr, mainArr;
 var jsonLink = [
-    "https://ok914.com",
-    "https://ok915.com",
-    "https://ok924.com",
-    "https://ok925.com",
-    "https://ok926.com",
-    "https://ok930.com",
-    "https://ok931.com",
-    "https://ok932.com",
-    "https://ok934.com",
-    "https://ok935.com"
+    "https://ok9vip9.com/trangchu",
+    "https://ok9vip9.com/trangchu",
+    "https://ok9vip9.com/trangchu",
+    "https://ok9vip9.com/trangchu",
+    "https://ok9vip9.com/trangchu",
 ]
 var jsonData = {
     "success": true,
@@ -104,7 +99,7 @@ var jsonData = {
                         "id": 75,
                         "name": "Link 1",
                         "rowName": null,
-                        "url": "https://ok914.com/",
+                        "url": "https://ok950.com",
                         "sort": 1,
                         "position": 2,
                         "type": 1,
@@ -114,7 +109,7 @@ var jsonData = {
                         "id": 76,
                         "name": "Link 2",
                         "rowName": null,
-                        "url": "https://ok915.com/",
+                        "url": "https://ok937.com",
                         "sort": 2,
                         "position": 2,
                         "type": 1,
@@ -124,7 +119,7 @@ var jsonData = {
                         "id": 77,
                         "name": "Link 3",
                         "rowName": null,
-                        "url": "https://ok924.com/",
+                        "url": "https://ok902.vip",
                         "sort": 3,
                         "position": 2,
                         "type": 1,
@@ -134,7 +129,7 @@ var jsonData = {
                         "id": 131,
                         "name": "Link 4",
                         "rowName": null,
-                        "url": "https://ok925.com/",
+                        "url": "https://www.google.com.vn/",
                         "sort": 4,
                         "position": 2,
                         "type": 1,
@@ -144,7 +139,7 @@ var jsonData = {
                         "id": 132,
                         "name": "Link 5",
                         "rowName": null,
-                        "url": "https://ok926.com/",
+                        "url": "https://ok950.com",
                         "sort": 5,
                         "position": 2,
                         "type": 1,
@@ -170,13 +165,13 @@ var jsonData = {
 
 
 function randomizeUrls(data, linkList) {
-    var mainPositionList = data.t.mainPositionList[0].mainPositionList;
+    // var mainPositionList = data.t.mainPositionList[0].mainPositionList;
 
-    for (var i = 0; i < mainPositionList.length; i++) {
-        var randomIndex = Math.floor(Math.random() * linkList.length);
-        mainPositionList[i].url = linkList[randomIndex];
-        linkList.splice(randomIndex, 1); // Loại bỏ URL đã sử dụng để tránh trùng lặp
-    }
+    // for (var i = 0; i < mainPositionList.length; i++) {
+    //     var randomIndex = Math.floor(Math.random() * linkList.length);
+    //     mainPositionList[i].url = linkList[randomIndex];
+    //     linkList.splice(randomIndex, 1); // Loại bỏ URL đã sử dụng để tránh trùng lặp
+    // }
 }
 randomizeUrls(jsonData, jsonLink);
 
@@ -259,39 +254,37 @@ $((function () {
 }));
 
 
-$(document).ready(function(){
+$(document).ready(function () {
 
     var videos = [
-        [{type:'mp4', 'src':'./video/clip1.mp4'}],
-        [{type:'mp4', 'src':'./video/clip2.mp4'}],  
-        [{type:'mp4', 'src':'./video/clip3.mp4'}],  
-        [{type:'mp4', 'src':'./video/clip4.mp4'}],  
-        [{type:'mp4', 'src':'./video/clip5.mp4'}],  
-        [{type:'mp4', 'src':'./video/clip6.mp4'}],  
-        [{type:'mp4', 'src':'./video/clip7.mp4'}],  
+        [{ type: 'mp4', 'src': './video/clip1.mp4' }],
+        [{ type: 'mp4', 'src': './video/clip2.mp4' }],
+        [{ type: 'mp4', 'src': './video/clip3.mp4' }],
+        [{ type: 'mp4', 'src': './video/clip4.mp4' }],
+        [{ type: 'mp4', 'src': './video/clip5.mp4' }],
+        [{ type: 'mp4', 'src': './video/clip6.mp4' }],
+        [{ type: 'mp4', 'src': './video/clip7.mp4' }],
     ];
-    var randomitem = videos[Math.floor(Math.random()*videos.length)];
+    var randomitem = videos[Math.floor(Math.random() * videos.length)];
 
     function videoadd(element, src, type) {
         var source = document.createElement('source');
         source.src = src;
         source.type = type;
-    element.appendChild(source);
+        element.appendChild(source);
     }
 
-    function newvideo(src)
-    {
-    var video = document.getElementById("randomVideo");
-    videoadd(video,src ,'video/ogg');
-    video.autoplay = true;
-    video.load();
+    function newvideo(src) {
+        var video = document.getElementById("randomVideo");
+        videoadd(video, src, 'video/ogg');
+        video.autoplay = true;
+        video.load();
     }
     newvideo(randomitem[0].src)
 
 
-    document.getElementById('randomVideo').addEventListener('ended',handler,false);
-    function handler(e)
-    {
+    document.getElementById('randomVideo').addEventListener('ended', handler, false);
+    function handler(e) {
         newvideo(randomitem[0].src)
     }
 })
