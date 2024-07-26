@@ -259,49 +259,49 @@ $((function () {
 }));
 
 
-$(document).ready(function () {
+// $(document).ready(function () {
 
-    var videos = [
-        [{ type: 'mp4', 'src': './video/clip1.mp4' }],
-        [{ type: 'mp4', 'src': './video/clip2.mp4' }],
-        [{ type: 'mp4', 'src': './video/clip3.mp4' }],
-        [{ type: 'mp4', 'src': './video/clip4.mp4' }],
-        [{ type: 'mp4', 'src': './video/clip5.mp4' }],
-        [{ type: 'mp4', 'src': './video/clip6.mp4' }],
-        [{ type: 'mp4', 'src': './video/clip7.mp4' }],
-    ];
-    var randomitem = videos[Math.floor(Math.random() * videos.length)];
+//     var videos = [
+//         [{ type: 'mp4', 'src': './video/clip1.mp4' }],
+//         [{ type: 'mp4', 'src': './video/clip2.mp4' }],
+//         [{ type: 'mp4', 'src': './video/clip3.mp4' }],
+//         [{ type: 'mp4', 'src': './video/clip4.mp4' }],
+//         [{ type: 'mp4', 'src': './video/clip5.mp4' }],
+//         [{ type: 'mp4', 'src': './video/clip6.mp4' }],
+//         [{ type: 'mp4', 'src': './video/clip7.mp4' }],
+//     ];
+//     var randomitem = videos[Math.floor(Math.random() * videos.length)];
 
-    function videoadd(element, src, type) {
-        var source = document.createElement('source');
-        source.src = src;
-        source.type = type;
-        element.appendChild(source);
-    }
+//     function videoadd(element, src, type) {
+//         var source = document.createElement('source');
+//         source.src = src;
+//         source.type = type;
+//         element.appendChild(source);
+//     }
 
-    function newvideo(src) {
-        var video = document.getElementById("randomVideo");
-        videoadd(video, src, 'video/ogg');
-        video.autoplay = true;
-        video.load();
-    }
-    newvideo(randomitem[0].src)
+//     function newvideo(src) {
+//         var video = document.getElementById("randomVideo");
+//         videoadd(video, src, 'video/ogg');
+//         video.autoplay = true;
+//         video.load();
+//     }
+//     newvideo(randomitem[0].src)
 
 
-    document.getElementById('randomVideo').addEventListener('ended', handler, false);
-    function handler(e) {
-        newvideo(randomitem[0].src)
-    }
-})
-function backgroundUpdateVideo() {
-    var video = document.getElementById('videoPlayer');
-    var sources = document.getElementById('sourceVideoPlayer');
+//     document.getElementById('randomVideo').addEventListener('ended', handler, false);
+//     function handler(e) {
+//         newvideo(randomitem[0].src)
+//     }
+// })
+// function backgroundUpdateVideo() {
+//     var video = document.getElementById('videoPlayer');
+//     var sources = document.getElementById('sourceVideoPlayer');
 
-    if (window.innerWidth <= 768) {
-        sources.src = './video/clip1-mobie.mp4#t=0.75';
-    } else {
-        sources.src = './video/clip1.mp4#t=0.75';
-    }
-    video.load();
-    video.play();
-}
+//     if (window.innerWidth <= 768) {
+//         sources.src = './video/clip1-mobie.mp4#t=0.75';
+//     } else {
+//         sources.src = './video/clip1.mp4#t=0.75';
+//     }
+//     video.load();
+//     video.play();
+// }
