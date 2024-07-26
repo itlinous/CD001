@@ -18,7 +18,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background: url("/img/bg_ok9_pc.jpg");
+    background: url(../img/bg_ok9_pc.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -450,7 +450,7 @@
       font-size: 0.8em;
       overflow: hidden;
       position: unset;
-      background: url("/img/bg_ok9_mobile.jpg");
+      background: url(../img/bg_ok9_mobile.jpg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
